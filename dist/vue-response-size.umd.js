@@ -44,13 +44,15 @@
     }
   };
   var vueResponseSize = {
-    install: function install(Vue, option) {
+    install: function install(Vue) {
+      var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
       var vm;
       var sizeMap = getSizeMap(option);
       init(); // 初始化尺寸映射
 
       function getSizeMap(option) {
-        var sizeMap = Object.assign({}, defaultSizeMap, option);
+        var sizeConfig = option && option.size;
+        var sizeMap = Object.assign({}, defaultSizeMap, sizeConfig);
 
         for (var key in sizeMap) {
           var value = sizeMap[key];
@@ -95,15 +97,9 @@
               }
             }
           }
-        });
+        }); // 将全局变量$vSize绑定响应式数据
 
-        if (option && typeof option.name === 'string' && option.name.trim() !== '') {
-          Vue.prototype[option.name] = vm.responseSize;
-        } else {
-          // 将全局变量$vSize绑定响应式数据
-          Vue.prototype.$vSize = vm.responseSize;
-        } // 处理resize事件
-
+        Vue.prototype.$vSize = vm.responseSize; // 处理resize事件
 
         onResize();
         window.addEventListener('resize', onResize);

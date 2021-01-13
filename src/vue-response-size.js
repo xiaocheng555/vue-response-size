@@ -23,14 +23,15 @@ const defaultSizeMap = {
 }
 
 export default {
-  install (Vue, option) {
+  install (Vue, option = {}) {
     let vm
     let sizeMap = getSizeMap(option)
     init()
 
     // 初始化尺寸映射
     function getSizeMap (option) {
-      const sizeMap = Object.assign({}, defaultSizeMap, option)
+      const sizeConfig = option && option.size
+      const sizeMap = Object.assign({}, defaultSizeMap, sizeConfig)
       for (const key in sizeMap) {
         const value = sizeMap[key]
         if (typeof value === 'object') {
@@ -72,12 +73,9 @@ export default {
           }
         }
       })
-      if (option && typeof option.name === 'string' && option.name.trim() !== '') {
-        Vue.prototype[option.name] = vm.responseSize
-      } else {
-        // 将全局变量$vSize绑定响应式数据
-        Vue.prototype.$vSize = vm.responseSize
-      }
+
+      // 将全局变量$vSize绑定响应式数据
+      Vue.prototype.$vSize = vm.responseSize
       // 处理resize事件
       onResize()
       window.addEventListener('resize', onResize)
