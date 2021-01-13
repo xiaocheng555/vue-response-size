@@ -1,7 +1,7 @@
 # vue-response-size
 
 Vue response size library. 
-Xs, sm, md, lg, xl size is base on Element-UI.
+Xs, sm, md, lg, xl size are the same as Element-UI.
 
 # Demo
 
