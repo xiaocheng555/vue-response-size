@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Vue response size library",
   "main": "dist/vue-response-size.umd.js",
-  "module": "dist/vue-response-size.esm.js",
+  "module": "dist/vue-response-size.es.js",
   "unpkg": "dist/vue-response-size.min.js",
   "scripts": {
     "build:umd": "rollup --config ./build/rollup.config.umd.js",
