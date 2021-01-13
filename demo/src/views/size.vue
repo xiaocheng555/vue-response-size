@@ -1,13 +1,3 @@
-/*
- * File: size.vue
- * File Created: 2021-01-13 10:47:07 am
- * Author: zhanghc11 (huancheng.zhang@meicloud.com)
- * Copyright: 2017 - 2021 Copyright (c), 深圳美云智数科技有限公司
- * -----
- * Last Modified: 2021-01-13 10:47:07 am
- * Modified By: zhanghc11 (huancheng.zhang@meicloud.com>)
- */
-
 <template>
   <div>
     <h2>change size</h2>
@@ -20,29 +10,35 @@
         <thead>
           <tr>
             <th>Name</th>
-            <th>Size</th>
+            <th>Change Size</th>
+            <th>Default Size</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>xl</td>
             <td>>=1904</td>
+            <td><span class="td-del">>=1920</span></td>
           </tr>
           <tr>
             <td>isLg</td>
             <td>>=1264</td>
+            <td><span class="td-del">>=1200</span></td>
           </tr>
           <tr>
             <td>isMd</td>
             <td>>=960</td>
+            <td><span class="td-del">>=992</span></td>
           </tr>
           <tr>
             <td>isSm</td>
             <td>>=600</td>
+            <td><span class="td-del">>=768</span></td>
           </tr>
           <tr>
             <td>isXs</td>
             <td>&lt;600</td>
+            <td><span class="td-del">&lt;768</span></td>
           </tr>
         </tbody>
       </table>
@@ -106,10 +102,14 @@ export default {
 table {
   display: inline-block;
   margin-top: 10px;
-  max-width: 300px;
+  max-width: 400px;
   td {
     padding: 4px 30px;
     font-size: 16px;
+    .td-del {
+      color: #F56C6C;
+      text-decoration: line-through;
+    }
   }
 }
 .warn-tip {

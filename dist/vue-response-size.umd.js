@@ -88,12 +88,22 @@
               isMd: false,
               isLg: false,
               isXl: false,
-              width: undefined
+              width: undefined,
+              changeSize: function changeSize(config) {
+                sizeMap = getSizeMap(config);
+                onResize();
+              }
             }
           }
-        }); // 将全局变量$responseSize绑定响应式数据
+        });
 
-        Vue.prototype.$responseSize = vm.responseSize; // 处理resize事件
+        if (option && typeof option.name === 'string' && option.name.trim() !== '') {
+          Vue.prototype[option.name] = vm.responseSize;
+        } else {
+          // 将全局变量$vSize绑定响应式数据
+          Vue.prototype.$vSize = vm.responseSize;
+        } // 处理resize事件
+
 
         onResize();
         window.addEventListener('resize', onResize);
