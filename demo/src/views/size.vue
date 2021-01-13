@@ -10,7 +10,7 @@
         <thead>
           <tr>
             <th>Name</th>
-            <th>Change Size</th>
+            <th>Changed Size</th>
             <th>Default Size</th>
           </tr>
         </thead>
