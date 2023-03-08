@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     extensions: ['.vue', '.mjs', '.js', '.json'],
     alias: {
-      'vue-response-size': path.resolve('../src/vue-response-size.ts')
+      // 'vue-response-size': path.resolve('../src/vue-response-size.ts')
     }
   }
 })
