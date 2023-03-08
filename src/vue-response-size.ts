@@ -22,7 +22,7 @@ export interface ResponseSize {
   isXl: boolean,
   width: number,
   height: number,
-  changeSize: (option?: { size: ResponseSizeOption }) => void,
+  changeSize: (option?: ResponseSizeOption) => void,
   destroy: () => void
 }
 
@@ -58,8 +58,8 @@ const $vSize = reactive<ResponseSize>({
   isXl: false,
   width: 0,
   height: 0,
-  changeSize: changeSize,
-  destroy: destroy
+  changeSize,
+  destroy
 })
 let sizeMap = getSizeMap()
 let onResizeThrottle: () => void
@@ -78,14 +78,14 @@ function destroy () {
 }
 
 // 更改尺寸
-function changeSize (option?: { size: ResponseSizeOption }) {
+function changeSize (option?: ResponseSizeOption) {
   sizeMap = getSizeMap(option)
   onResize()
 }
 
 // 获取尺寸映射
-function getSizeMap (option?: { size: ResponseSizeOption }) {
-  const sizeConfig = option && option.size
+function getSizeMap (option?: ResponseSizeOption) {
+  const sizeConfig = option
   const sizeMap = Object.assign({}, defaultSizeMap, sizeConfig)
   let key: keyof ResponseSizeOption
   for (key in sizeMap) {

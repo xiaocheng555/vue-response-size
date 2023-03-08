@@ -628,7 +628,7 @@ function changeSize(option) {
 
 
 function getSizeMap(option) {
-  var sizeConfig = option && option.size;
+  var sizeConfig = option;
   var sizeMap = Object.assign({}, defaultSizeMap, sizeConfig);
   var key;
 
