@@ -1,3 +1,4 @@
+// 导出 *.d.ts 文件
 import dts from 'rollup-plugin-dts'
 
 export default {

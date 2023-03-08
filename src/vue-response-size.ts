@@ -1,4 +1,4 @@
-import { reactive } from 'vue'
+import { reactive, toRefs } from 'vue'
 import { throttle } from 'lodash-es'
 
 export interface ResponseSizeValue {
@@ -58,8 +58,8 @@ const $vSize = reactive<ResponseSize>({
   isXl: false,
   width: 0,
   height: 0,
-  changeSize,
-  destroy
+  changeSize: changeSize,
+  destroy: destroy
 })
 let sizeMap = getSizeMap()
 let onResizeThrottle: () => void
@@ -138,7 +138,26 @@ function onResize () {
   $vSize.height = height
 }
 
-export default $vSize
+const {
+  isXs,
+  isSm,
+  isMd,
+  isLg,
+  isXl,
+  width,
+  height
+} = toRefs($vSize)
+
 export {
-  $vSize
+  $vSize,
+  isXs,
+  isSm,
+  isMd,
+  isLg,
+  isXl,
+  width,
+  height,
+  changeSize,
+  destroy,
+  $vSize as default
 }

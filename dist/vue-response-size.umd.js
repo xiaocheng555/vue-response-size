@@ -689,8 +689,26 @@
     $vSize.height = height;
   }
 
+  var _toRefs = vue.toRefs($vSize),
+      isXs = _toRefs.isXs,
+      isSm = _toRefs.isSm,
+      isMd = _toRefs.isMd,
+      isLg = _toRefs.isLg,
+      isXl = _toRefs.isXl,
+      width = _toRefs.width,
+      height = _toRefs.height;
+
   exports.$vSize = $vSize;
+  exports.changeSize = changeSize;
   exports["default"] = $vSize;
+  exports.destroy = destroy;
+  exports.height = height;
+  exports.isLg = isLg;
+  exports.isMd = isMd;
+  exports.isSm = isSm;
+  exports.isXl = isXl;
+  exports.isXs = isXs;
+  exports.width = width;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 

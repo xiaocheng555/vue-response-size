@@ -1,4 +1,4 @@
-import { reactive } from 'vue';
+import { reactive, toRefs } from 'vue';
 
 function _typeof(obj) {
   "@babel/helpers - typeof";
@@ -685,4 +685,13 @@ function onResize() {
   $vSize.height = height;
 }
 
-export { $vSize, $vSize as default };
+var _toRefs = toRefs($vSize),
+    isXs = _toRefs.isXs,
+    isSm = _toRefs.isSm,
+    isMd = _toRefs.isMd,
+    isLg = _toRefs.isLg,
+    isXl = _toRefs.isXl,
+    width = _toRefs.width,
+    height = _toRefs.height;
+
+export { $vSize, changeSize, $vSize as default, destroy, height, isLg, isMd, isSm, isXl, isXs, width };

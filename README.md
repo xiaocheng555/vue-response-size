@@ -33,10 +33,13 @@ $ yarn add vue-response-size
 
 ```
 
+[___Vue2 请查看___](https://github.com/xiaocheng555/vue-response-size)
+
 # Usage
 
 ```javascript
 import $vSize from 'vue-response-size'
+
 ```
 
 template:
@@ -48,6 +51,26 @@ template:
 <div v-if="$vSize.isSm">sm visible: {{ $vSize.width }}</div>
 <div v-if="$vSize.isXs">xs visible: {{ $vSize.width }}</div>
 ```
+
+> 其中 `$vSize` 为 `reactive` 类型
+
+## 用法二
+
+```javascript
+import { isXs, isSm, isMd, isLg, isXl, width, height, changeSize } from 'vue-response-size'
+```
+
+template:
+
+```html
+<div v-if="isXl">xl visible: {{ width }}</div>
+<div v-if="isLg">lg visible: {{ width }}</div>
+<div v-if="isMd">md visible: {{ width }}</div>
+<div v-if="isSm">sm visible: {{ width }}</div>
+<div v-if="isXs">xs visible: {{ width }}</div>
+```
+
+> 其中 `isXs, isSm, isMd, isLg, isXl, width, height, changeSize` 的值为 `ref` 类型，script中使用时记得加上 `.value`，如 `isXs.value`.
 
 ## $vSize Prop
 

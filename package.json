@@ -1,7 +1,7 @@
 {
   "name": "vue-response-size",
   "version": "2.0.0",
-  "description": "Vue response size library",
+  "description": "Vue3 response size library",
   "main": "dist/vue-response-size.umd.js",
   "module": "dist/vue-response-size.es.js",
   "unpkg": "dist/vue-response-size.min.js",
@@ -14,6 +14,7 @@
   },
   "keywords": [
     "vue",
+    "vue3",
     "responsive",
     "response",
     "size",
@@ -21,6 +22,10 @@
   ],
   "author": "xiaocheng555",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaocheng555/vue-response-size/tree/vue3"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
@@ -42,5 +47,6 @@
   "dependencies": {
     "lodash-es": "^4.17.21",
     "vue": "^3.2.47"
-  }
+  },
+   "types": "dist/index.d.ts"
 }
