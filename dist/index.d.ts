@@ -1,6 +1,8 @@
+import * as vue from 'vue';
+
 interface ResponseSizeValue {
-    min?: Number;
-    max?: Number;
+    min?: number;
+    max?: number;
 }
 interface ResponseSizeOption {
     xl?: ResponseSizeValue;
@@ -17,9 +19,7 @@ interface ResponseSize {
     isXl: boolean;
     width: number;
     height: number;
-    changeSize: (option?: {
-        size: ResponseSizeOption;
-    }) => void;
+    changeSize: (option?: ResponseSizeOption) => void;
     destroy: () => void;
 }
 declare const $vSize: {
@@ -30,10 +30,17 @@ declare const $vSize: {
     isXl: boolean;
     width: number;
     height: number;
-    changeSize: (option?: {
-        size: ResponseSizeOption;
-    }) => void;
+    changeSize: (option?: ResponseSizeOption) => void;
     destroy: () => void;
 };
+declare function destroy(): void;
+declare function changeSize(option?: ResponseSizeOption): void;
+declare const isXs: vue.Ref<boolean>;
+declare const isSm: vue.Ref<boolean>;
+declare const isMd: vue.Ref<boolean>;
+declare const isLg: vue.Ref<boolean>;
+declare const isXl: vue.Ref<boolean>;
+declare const width: vue.Ref<number>;
+declare const height: vue.Ref<number>;
 
-export { $vSize, ResponseSize, ResponseSizeOption, ResponseSizeValue, $vSize as default };
+export { $vSize, ResponseSize, ResponseSizeOption, ResponseSizeValue, changeSize, $vSize as default, destroy, height, isLg, isMd, isSm, isXl, isXs, width };

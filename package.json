@@ -1,6 +1,6 @@
 {
   "name": "vue-response-size",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Vue3 response size library",
   "main": "dist/vue-response-size.umd.js",
   "module": "dist/vue-response-size.esm.js",
@@ -10,7 +10,7 @@
     "build:browser": "rollup --config ./build/rollup.config.browser.js",
     "build:es": "rollup --config ./build/rollup.config.es.js",
     "build:dts": "rollup --config ./build/rollup.config.dts.js",
-    "build": "npm run build:umd && npm run build:browser && npm run build:es && npm build:dts"
+    "build": "npm run build:umd && npm run build:browser && npm run build:es && npm run build:dts"
   },
   "keywords": [
     "vue",
