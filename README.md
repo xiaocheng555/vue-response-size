@@ -13,6 +13,10 @@ Xs, sm, md, lg, xl size are the same as Element-UI.
 
 ```bash
 
+# vue2
+$ npm i vue-response-size@1 -S 
+
+# vue3
 $ npm i vue-response-size -S
 
 ```
@@ -21,9 +25,15 @@ $ npm i vue-response-size -S
 
 ```bash
 
+# vue2
+$ yarn add vue-response-size@1
+
+# vue3
 $ yarn add vue-response-size
 
 ```
+
+[___Vue3 请查看___](https://github.com/xiaocheng555/vue-response-size/tree/vue3)
 
 # Usage
 
@@ -37,7 +47,31 @@ Vue.use(VueResponseSize)
 template:
 
 ```html
-<div v-if="$vSize.isXl">xl visible: {{ $vSize.width }}</div>
+<div## npm
+
+```bash
+
+# vue2
+$ npm i vue-response-size@1 -S 
+
+# vue3
+$ npm i vue-response-size -S
+
+```
+
+## yarn
+
+```bash
+
+# vue2
+$ yarn add vue-response-size@1
+
+# vue3
+$ yarn add vue-response-size
+
+```
+
+[___Vue2 请查看___](https://github.com/xiaocheng555/vue-response-size) v-if="$vSize.isXl">xl visible: {{ $vSize.width }}</div>
 <div v-if="$vSize.isLg">lg visible: {{ $vSize.width }}</div>
 <div v-if="$vSize.isMd">md visible: {{ $vSize.width }}</div>
 <div v-if="$vSize.isSm">sm visible: {{ $vSize.width }}</div>

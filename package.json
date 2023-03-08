@@ -1,6 +1,6 @@
 {
   "name": "vue-response-size",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue response size library",
   "main": "dist/vue-response-size.umd.js",
   "module": "dist/vue-response-size.es.js",
@@ -20,6 +20,10 @@
   ],
   "author": "xiaocheng555",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaocheng555/vue-response-size.git"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
