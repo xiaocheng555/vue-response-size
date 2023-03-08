@@ -1,6 +1,6 @@
 {
   "name": "vue-response-size",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vue response size library",
   "main": "dist/vue-response-size.umd.js",
   "module": "dist/vue-response-size.es.js",

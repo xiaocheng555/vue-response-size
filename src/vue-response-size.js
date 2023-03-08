@@ -30,7 +30,7 @@ export default {
 
     // 初始化尺寸映射
     function getSizeMap (option) {
-      const sizeConfig = option && option.size
+      const sizeConfig = (option && option.size) || option
       const sizeMap = Object.assign({}, defaultSizeMap, sizeConfig)
       for (const key in sizeMap) {
         const value = sizeMap[key]
