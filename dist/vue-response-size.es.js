@@ -45,7 +45,7 @@ var vueResponseSize = {
     init(); // 初始化尺寸映射
 
     function getSizeMap(option) {
-      var sizeConfig = option && option.size;
+      var sizeConfig = option && option.size || option;
       var sizeMap = Object.assign({}, defaultSizeMap, sizeConfig);
 
       for (var key in sizeMap) {

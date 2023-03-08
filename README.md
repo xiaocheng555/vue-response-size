@@ -3,6 +3,9 @@
 Vue response size library. 
 Xs, sm, md, lg, xl size are the same as Element-UI.
 
+[___Vue3 请查看___](https://github.com/xiaocheng555/vue-response-size/tree/vue3)
+
+
 # Demo
 
 [___Demo___](https://xiaocheng555.github.io/vue-response-size/demo/dist/index.html)
@@ -32,8 +35,6 @@ $ yarn add vue-response-size@1
 $ yarn add vue-response-size
 
 ```
-
-[___Vue3 请查看___](https://github.com/xiaocheng555/vue-response-size/tree/vue3)
 
 # Usage
 
