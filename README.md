@@ -1,4 +1,4 @@
-# vue-response-size
+# vue-response-size 【Vue3】
 
 Vue response size library. 
 Xs, sm, md, lg, xl size are the same as Element-UI.
