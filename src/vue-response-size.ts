@@ -1,16 +1,29 @@
 import { reactive } from 'vue'
-import throttle from 'lodash/throttle'
+import { throttle } from 'lodash-es'
 
-interface SizeValue {
-  min?: Number,
-  max?: Number
+export interface ResponseSizeValue {
+  min?: number,
+  max?: number
 }
-interface SizeOption {
-  xl?: SizeValue,
-  lg?: SizeValue,
-  md?: SizeValue,
-  sm?: SizeValue,
-  xs?: SizeValue,
+
+export interface ResponseSizeOption {
+  xl?: ResponseSizeValue,
+  lg?: ResponseSizeValue,
+  md?: ResponseSizeValue,
+  sm?: ResponseSizeValue,
+  xs?: ResponseSizeValue,
+}
+
+export interface ResponseSize {
+  isXs: boolean,
+  isSm: boolean,
+  isMd: boolean,
+  isLg: boolean,
+  isXl: boolean,
+  width: number,
+  height: number,
+  changeSize: (option?: { size: ResponseSizeOption }) => void,
+  destroy: () => void
 }
 
 // 尺寸范围
@@ -37,23 +50,26 @@ const defaultSizeMap = {
   }
 }
 
-const $vSize = reactive({
+const $vSize = reactive<ResponseSize>({
   isXs: false,
   isSm: false,
   isMd: false,
   isLg: false,
   isXl: false,
   width: 0,
-  height: 0
+  height: 0,
+  changeSize,
+  destroy
 })
 let sizeMap = getSizeMap()
-let onResizeThrottle: () => {}
+let onResizeThrottle: () => void
 init() 
 
 // 初始化
 function init () {
+  console.log(window.name ?? '1')
   onResize()
-  onResizeThrottle = throttle(onResize, 10)
+  onResizeThrottle = throttle(onResize, 10) as () => void
   window.addEventListener('resize', onResizeThrottle)
 }
 
@@ -62,16 +78,16 @@ function destroy () {
 }
 
 // 更改尺寸
-function changeSize (option?: { size: SizeOption }) {
+function changeSize (option?: { size: ResponseSizeOption }) {
   sizeMap = getSizeMap(option)
   onResize()
 }
 
 // 获取尺寸映射
-function getSizeMap (option?: { size: SizeOption }) {
+function getSizeMap (option?: { size: ResponseSizeOption }) {
   const sizeConfig = option && option.size
   const sizeMap = Object.assign({}, defaultSizeMap, sizeConfig)
-  let key: keyof SizeOption
+  let key: keyof ResponseSizeOption
   for (key in sizeMap) {
     const value = sizeMap[key]
     if (typeof value === 'object') {
@@ -119,13 +135,10 @@ function onResize () {
   $vSize.isLg = isLg
   $vSize.isXl = isXl
   $vSize.width = width
-  $vSize.width = width
   $vSize.height = height
 }
 
 export default $vSize
 export {
-  $vSize,
-  changeSize,
-  destroy
+  $vSize
 }
